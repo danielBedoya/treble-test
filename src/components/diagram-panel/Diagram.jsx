@@ -37,6 +37,22 @@ const target = {
                     body: ''
                 }
             });
+        } else {
+            node = new ImageNodeModel("Text node", "rgb(124, 28, 120)", {
+                title: "",
+                body: "",
+                video: {
+                    url: "",
+                },
+                image: {
+                    src: "",
+                    alt: "",
+                },
+                info: {
+                    title: "",
+                    body: "",
+                },
+            });
         }
 
         node.x = x;

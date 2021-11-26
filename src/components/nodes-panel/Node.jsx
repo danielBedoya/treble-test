@@ -9,6 +9,10 @@ class Node extends React.Component {
         if (type === 'imagenode') {
             return <ImageNodeWidget node={{ name: 'Image node' }} color={color} displayOnly/>;
         }
+
+        if (type == 'textnode') {
+             return <ImageNodeWidget node={{ name: 'Text node' }} color={color} displayOnly/>;
+        }
         
         console.warn('Unknown node type');
 

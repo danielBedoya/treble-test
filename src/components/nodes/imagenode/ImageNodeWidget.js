@@ -44,24 +44,39 @@ export class ImageNodeWidget extends React.Component {
       style.background = color || displayColor;
     }
 
-    return (
-      <div className='basic-node' style={style}>
-        <div className='title'>
-          <div className='name'>
-            image
+    if (name === "Text node") {
+      return (
+          <div style={{ color: "white" }}>
+              <h1>Text</h1>
+              <div className="ports">
+                  <div className="in">{this.getInPort()}</div>
+                  <div className="out">{this.getOutPort()}</div>
+              </div>
           </div>
-          {!displayOnly ? <div className='fa fa-close' onClick={this.onRemove.bind(this)} /> : null}
+      );
+    } else {
+
+      return (
+  
+        <div className='basic-node' style={style}>
+          <div className='title'>
+            <div className='name'>
+              image
+            </div>
+            {!displayOnly ? <div className='fa fa-close' onClick={this.onRemove.bind(this)} /> : null}
+          </div>
+          <div className='ports'>
+            <div className='in'>
+              {this.getInPort()}
+            </div>
+            <div className='out'>
+              {this.getOutPort()}
+            </div>
+          </div>
         </div>
-        <div className='ports'>
-          <div className='in'>
-            {this.getInPort()}
-          </div>
-          <div className='out'>
-            {this.getOutPort()}
-          </div>
-        </div>
-      </div>
-    );
+      );
+    }
+
   }
 }
 

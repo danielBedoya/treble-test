@@ -29,7 +29,7 @@
 .scroll { overflow: auto;  }
 .spacer { flex: 1; }
 
-.panel, .toolbar { background-color: #fff; }
+.panel, .toolbar { background-color: #202020; }
 
 .toolbar {
   display:flex;
@@ -45,11 +45,11 @@
   background-color: #ddd;
 
 }
-.content { background-color: white; }
+.content { background-color: #000000; }
 
 .footer { background-color: #ccc; }
 .header { background-color: #3c3c3c; color: #fff; }
-.start, .end { min-width: 150px; }
+.start, .end { min-width: 302px; }
 .end {
   padding: 5px;
 }
