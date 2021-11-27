@@ -385,6 +385,9 @@
   border: 0;
   overflow: visible;
   font-size: 12px;
+
+  transition: box-shadow .3s ease;
+
   &:hover{
     box-shadow: rgba(white, 0.35) 0px 5px 15px;
   }
@@ -450,6 +453,7 @@
 }
 
 .shadow{
+  transition: box-shadow .3s ease;
   &:hover{
     box-shadow: rgba(white, 0.35) 0px 5px 15px;
   }
