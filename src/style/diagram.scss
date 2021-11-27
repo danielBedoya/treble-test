@@ -349,7 +349,7 @@
   padding: 1.5rem;
 
   .node-wrapper {
-    margin-bottom: 1rem;
+    margin-bottom: 50px;
 
     .basic-node {
       width: 120px;
@@ -382,15 +382,20 @@
   border-radius: 5px;
   font-family:Arial;
   color: white;
-  border: solid 2px black;
+  border: 0;
   overflow: visible;
   font-size: 12px;
-  box-shadow: 0 0 10px rgba(black,0.5);
+  &:hover{
+    box-shadow: rgba(white, 0.35) 0px 5px 15px;
+  }
 
   .title{
-    background: rgba(black,0.3);
+    background: transparent;
+    color: rgba(white,0.7);
     display: flex;
     white-space: nowrap;
+    font-size: 8px;
+    margin-top: 7px;
     >*{
       align-self: center;
     }
@@ -438,6 +443,22 @@
   &:hover{
     color: white;
   }
+}
+
+.none{
+  display: none;
+}
+
+.shadow{
+  &:hover{
+    box-shadow: rgba(white, 0.35) 0px 5px 15px;
+  }
+}
+
+hr {
+  border: 1px solid gray;
+  width: 60%;
+  margin-bottom: 50px;
 }
 
 img {

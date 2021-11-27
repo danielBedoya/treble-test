@@ -37,12 +37,8 @@ export class ImageNodeWidget extends React.Component {
   }
 
   render() {
-    const { node, displayOnly, color: displayColor } = this.props;
+    const { node, displayOnly} = this.props;
     const { name, color } = node;
-    const style = {};
-    if (color || displayColor) {
-      style.background = color || displayColor;
-    }
 
     if (name === "Text node") {
       return (
@@ -59,30 +55,34 @@ export class ImageNodeWidget extends React.Component {
                     </div>
                   </div>
               ) : (
+                <div className="shadow">
                   <h1>Text</h1>
+                </div>
               )}
           </div>
       );
     } else {
+      let { src, alt } = node.content.image;
 
       return (
-  
-        <div className='basic-node' style={style}>
-          <div className='title'>
-            <div className='name'>
-              image
-            </div>
-            {!displayOnly ? <div className='fa fa-close' onClick={this.onRemove.bind(this)} /> : null}
+          <div className="basic-node" style={{ margin: 'auto'}}>
+                {!displayOnly ? (
+                  <div style={{ textAlign: 'right'}}>
+                    <div
+                        className="fa fa-close close"
+                        onClick={this.onRemove.bind(this)}
+                    />
+                  </div>
+                ) : null}
+              <div className="ports">
+                  <div className={`in ${displayOnly? 'none' : '' } `}>{this.getInPort()}</div>
+                  <img src={require(`../../../images/${src}`).default} alt={alt} style={{ width: 100, margin: 'auto'}}/>
+                  <div className={`out ${displayOnly? 'none' : '' } `}>{this.getOutPort()}</div>
+              </div>
+              <div className="title" style={{ textAlign: 'center'}}>
+                <h2 style={{ margin: 'auto' }}>{alt}</h2>
+              </div>
           </div>
-          <div className='ports'>
-            <div className='in'>
-              {this.getInPort()}
-            </div>
-            <div className='out'>
-              {this.getOutPort()}
-            </div>
-          </div>
-        </div>
       );
     }
 

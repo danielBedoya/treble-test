@@ -4,14 +4,14 @@ import { ImageNodeWidget } from '../nodes/imagenode/ImageNodeWidget';
 
 class Node extends React.Component {
     renderNode() {
-        const { type, color } = this.props;
+        const { type, displayName, image } = this.props;
 
         if (type === 'imagenode') {
-            return <ImageNodeWidget node={{ name: 'Image node' }} color={color} displayOnly/>;
+            return <ImageNodeWidget node={{ name: 'Image node', content: {image: { src: image, alt: displayName }} }} displayOnly/>;
         }
 
         if (type == 'textnode') {
-             return <ImageNodeWidget node={{ name: 'Text node' }} color={color} displayOnly/>;
+             return <ImageNodeWidget node={{ name: 'Text node' }}  displayOnly/>;
         }
         
         console.warn('Unknown node type');
@@ -20,10 +20,10 @@ class Node extends React.Component {
     }
 
     render() {
-        const { type, color } = this.props;
+        const { type } = this.props;
 
         return (
-            <DragWrapper type={type} color={color} style={{ display: 'inline-block', width: "100%", background: 'transparent' }}>
+            <DragWrapper type={type} style={{ display: 'inline-block', width: "100%", background: 'transparent' }}>
                 {this.renderNode()}
             </DragWrapper>
         );

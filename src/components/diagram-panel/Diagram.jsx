@@ -21,7 +21,9 @@ const target = {
 
         let node;
 
+
         if (item.type === 'imagenode') {
+            const { src, alt } = item.children.props.node.content.image;
             node = new ImageNodeModel('Image Node', 'rgb(124, 28, 120)', {
                 title: '',
                 body: '',
@@ -29,8 +31,8 @@ const target = {
                     url: ''
                 },
                 image: {
-                    src: '',
-                    alt: ''
+                    src: src? src : '',
+                    alt: alt? alt : ''
                 },
                 info: {
                     title: '',
