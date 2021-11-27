@@ -23,7 +23,7 @@ class Node extends React.Component {
         const { type, color } = this.props;
 
         return (
-            <DragWrapper type={type} color={color} style={{ display: 'inline-block' }}>
+            <DragWrapper type={type} color={color} style={{ display: 'inline-block', width: "100%", background: 'transparent' }}>
                 {this.renderNode()}
             </DragWrapper>
         );

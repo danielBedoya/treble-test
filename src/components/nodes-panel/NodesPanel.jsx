@@ -9,6 +9,7 @@ class NodesPanel extends React.Component {
                     <div className="node-wrapper">
                         <Node type="textnode" color="rgb(238, 238, 238)" />
                     </div>
+                    <hr style={{border: "1px solid gray", width: "60%"}} />
                     <div className="node-wrapper">
                         <Node type="imagenode" color="rgb(238, 238, 238)" />
                     </div>

@@ -46,12 +46,21 @@ export class ImageNodeWidget extends React.Component {
 
     if (name === "Text node") {
       return (
-          <div style={{ color: "white" }}>
-              <h1>Text</h1>
-              <div className="ports">
-                  <div className="in">{this.getInPort()}</div>
-                  <div className="out">{this.getOutPort()}</div>
-              </div>
+          <div style={{ color: "white", textAlign: "center" }}>
+              {!displayOnly ? (
+                  <div className="basic-node">
+                    <div style={{textAlign: 'right'}}>
+                      <div className='fa fa-close close' onClick={this.onRemove.bind(this)} />
+                    </div>
+                    <div className="ports">
+                        <div className="in">{this.getInPort()}</div>
+                        <input className="text-input" type="text" placeholder="Some text" />
+                        <div className="out">{this.getOutPort()}</div>
+                    </div>
+                  </div>
+              ) : (
+                  <h1>Text</h1>
+              )}
           </div>
       );
     } else {
